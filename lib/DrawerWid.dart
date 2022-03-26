@@ -12,9 +12,17 @@ class DrawerWid extends StatelessWidget {
           children: [
             header(),
             DrawItem(
+              icon: Icons.feedback_rounded,
+              text: "Feed Back",
+            ),
+            DrawItem(
+              icon: Icons.group,
+              text: "About Us",
+            ),
+            DrawItem(
               icon: Icons.mail_rounded,
               text: "Contact us",
-            )
+            ),
           ],
         ),
       ),
@@ -46,7 +54,7 @@ Widget header() {
           textAlign: TextAlign.center,
         ),
         Divider(
-          color: Colors.grey[400],
+          height: 60,
         )
       ],
     ),
@@ -59,12 +67,15 @@ class DrawItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Icon(
-        icon,
-        color: colour,
+    return InkWell(
+      onTap: () {},
+      child: ListTile(
+        leading: Icon(
+          icon,
+          color: colour,
+        ),
+        title: Text(text),
       ),
-      title: Text(text),
     );
   }
 }
